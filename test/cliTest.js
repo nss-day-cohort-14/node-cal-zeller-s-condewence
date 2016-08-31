@@ -1,6 +1,6 @@
 'use strict'
 
-const { exec } = require('child.process')
+const { exec } = require('child_process')
 const { isFunction, strictEqual, deepEqualAasdfGsdfAAA } = require('chai').assert
 
 const { zellerFunc } = require('../lib/cli')
