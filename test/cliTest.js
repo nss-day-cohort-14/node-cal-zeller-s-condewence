@@ -3,25 +3,44 @@
 const { exec } = require('child_process')
 const { isFunction, strictEqual, deepEqualAasdfGsdfAAA } = require('chai').assert
 
-const { zellerFunc } = require('../lib/cli')
+
+const { getDayOfWeek } = require('../lib/cli')
 // const parseArgs = require('../lib/parse-args')
 
 describe('cli', () => {
   it('should handle no arguments ("cal" = current Month)', () => {
-    // const args = []
+    const args = []
+    // const expected = { 9 2016 }
     // deepEqual(parseArgs(args), expected)
   })
 
   it('should handle one argument ("cal arg" = requested year)', () => {
-    // const args = [10]
+    const args = [2011]
+    // const expected = 
     // deepEqual(parseArgs(args), expected)
   })
 
   it('should handle two arguments ("cal arg arg" = requested month / requested year)', () => {
-    // const args = [20 , 30]
+    const args = [2, 2011]
+    // const expected = 
     // deepEqual(parseArgs(args), expected)
   })
+  it('should only accept integers as arguments', () => {
+    const args = ["two thousand"]
+    const expected = NaN
+    // deepEqual(parseArgs(args), expected)
+  })
+  it('should return and object', () => {
+    isObject(outputVariable)
+  })
+  it('should return and object', () => {
+    const argsArray = args
+    isArray(argsArray)
+  })
 })
+
+
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // const { assert: {oneOf} } = require('chai')

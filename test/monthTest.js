@@ -1,50 +1,110 @@
+'use strict'
 
-// June 2016
+const { isFunction, oneOf, deepEqual } = require('chai').assert;
+
+const { ??????? } = require('../lib/month')
+const { getDayOfWeek } = require('../lib/zeller')
+
+describe('month', () => {
+  describe('???????', () => {
+    it('should be a function', () => {
+      isFunction((???????)
+    })
+      it('Each indexed month has a corresponding name', () => {
+      oneOf((??????), ["March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "Janruary", "February"])
+    })
+    it('Month starts on a day', () => {
+      oneOf((??????), ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"])
+    })
+    it('Has a certain range of weeks', () => {
+      oneOf((??????), [4, 5, 6])
+    })
+
+    it('Has a certain range of days', () => {
+      oneOf((??????), [28, 29, 30, 31])
+    })
+
+// 6 2016
 // Starts on wednesday
 // 31 days
 // 5 weeks
+    it('', () => {
+      
+    })
 
-// Sept 2016
+
+// 9 2016
 // Starts on thursday
 // 30 days
 // 5 weeks
+    it('', () => {
+      
+    })
 
-// Feb 2016
+
+// 2 2016
 // starts on monday
 // 29 days
 // 5 weeks
+    it('', () => {
+      
+    })
 
-// Feb 2014
+
+// 2 2014
 // starts on saturday
 // 28 days
 // 5 weeks
+    it('', () => {
+      
+    })
 
-// Feb 2015
+
+// 2 2015
 // starts on sunday
 // 28 days
 // 4 weeks
+    it('', () => {
+      
+    })
 
-// Jan 2016
+
+// 1 2016
 // starts on friday
 // 31 days
 // 6 weeks
+    it('', () => {
+      
+    })
 
-// Nov 2014
+
+// 11 2014
 // starts on saturday
 // 30 days
 // 6 weeks
+    it('', () => {
+      
+    })
 
-// Feb 1900
+
+// 2 1900
 // starts on thursday
 // 28 days (non-leap century)
 // 5 weeks
+    it('', () => {
+      
+    })
 
-// Feb 2000
+
+// 2 2000
 // starts on tuesday
 // 29 days (leap century)
 // 5 weeks
-
+    it('', () => {
+      
+    })
 // node-cal 1752 // cal: year 1752 not in range 1753..9999
 // node-cal 10000 // cal: year 10000 not in range 1753..9999
 // node-cal 13 2015 // cal: month 13 not in range 1..12
 
+})
