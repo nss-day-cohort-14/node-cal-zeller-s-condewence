@@ -2,17 +2,16 @@
 
 const { isFunction, oneOf } = require('chai').assert;
 
-const { zellerFunc } = require('../lib/zeller')
+const { getDayOfWeek } = require('../lib/zeller')
 
 describe('zeller', () => {
-	describe('zellerFunc', () => {
+	describe('getDayOfWeek', () => {
 		it('should be a function', () => {
-			isFunction(zellerFunc)
+			isFunction(getDayOfWeek)
 		})
 		it('should return an integer 0-6 representing the day', () => {
-			oneOf(zellerFunc(31, 8, 20, 16), [0, 1, 2, 3, 4, 5, 6])
+			oneOf(getDayOfWeek(31, 8, 20, 16), [0, 1, 2, 3, 4, 5, 6])
 		})
-
 	})
 })
 
