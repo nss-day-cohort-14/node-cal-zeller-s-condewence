@@ -1,4 +1,4 @@
-# node-cal-zeller-s-condewence
+# TEAM "Node Cal Zellers Condewence"
 ## Command Line Applications / Group Project 01 / Calendar
 
 Team Members - [Jamey McAuliffe](https://github.com/JameyMcAuliffe) & [Eric Denton](https://github.com/iamericanartist)  
@@ -32,10 +32,10 @@ Using Mocha, Chai, and Istanbul to run tests, we will be breaking down each piec
 code and use testing to help us program.  
 
 #### Getting Started
-npm init --yes
+npm init --yes  
 npm install mocha --save-dev   
-npm install chai --save-dev
-npm install istanbul --save-dev
+npm install chai --save-dev  
+npm install istanbul --save-dev  
 
 #### Running Tests
 Edit our package.json "scripts" to easier call our testing:  
@@ -46,5 +46,5 @@ Edit our package.json "scripts" to easier call our testing:
   },
 ```  
 
-npm run test
+npm run test  
 npm run coverage
