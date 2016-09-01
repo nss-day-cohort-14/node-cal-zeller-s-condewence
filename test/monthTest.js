@@ -14,6 +14,18 @@ const { getDayOfWeek, getMonth, getYear } = require('../lib/zeller')
       const month = getMonth(5)
       isNumber(month, 'damn straight thats a number')
     })
+    it('should take an argument', () => {
+      const arg = 2
+      const expected = 14
+      const month = getMonth(arg)
+      deepEqual(month, expected)
+    })
+    it('should not return an indexed month with arg not 1-12', () => {
+      const expected = undefined
+      const month = getMonth(13)
+      deepEqual(month, expected)
+    })
+    it('should ')
     //   it.skip('Each indexed month has a corresponding name', () => {
     //   oneOf((getMonth), ["March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "Janruary", "February"])
     // })
@@ -28,6 +40,7 @@ const { getDayOfWeek, getMonth, getYear } = require('../lib/zeller')
     //   oneOf((??????), [28, 29, 30, 31])
     // })
 })
+ 
 // 6 2016
 // Starts on wednesday
 // 31 days
