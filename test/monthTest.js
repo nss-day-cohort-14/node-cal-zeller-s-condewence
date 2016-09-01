@@ -1,8 +1,7 @@
 'use strict'
 
-const { isFunction, oneOf, deepEqual, isNumber } = require('chai').assert;
+const { isFunction, oneOf, deepEqual, isNumber ,isUndefined } = require('chai').assert;
 
-//const { getMonth, getYear } = require('../lib/month')
 const { getDayOfWeek, getMonth, getYear } = require('../lib/zeller')
 
 
@@ -20,26 +19,36 @@ const { getDayOfWeek, getMonth, getYear } = require('../lib/zeller')
       const month = getMonth(arg)
       deepEqual(month, expected)
     })
-    it('should not return an indexed month with arg not 1-12', () => {
-      const expected = undefined
+    it('should return undefined with arg !1-12', () => {
+      // const expected = undefined
       const month = getMonth(13)
-      deepEqual(month, expected)
+      isUndefined(month)
     })
-    it('should ')
+    it('should return month +12 if monthArg is 1 or 2', () => {
+      const month = 1
+      const expected = month + 12
+      const modifiedMonth = getMonth(month)
+      deepEqual(modifiedMonth, expected)
+    })    
+
     //   it.skip('Each indexed month has a corresponding name', () => {
     //   oneOf((getMonth), ["March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "Janruary", "February"])
     // })
-    // it('Month starts on a day', () => {
-    //   oneOf((??????), ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"])
-    // })
-    // it('Has a certain range of weeks', () => {
-    //   oneOf((??????), [4, 5, 6])
-    // })
+  })
+//     it('Month starts on a day', () => {
+//       oneOf((??????), ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"])
+//     })
+//     it('Has a certain range of weeks', () => {
+//       oneOf((??????), [4, 5, 6])
+//     })
 
-    // it('Has a certain range of days', () => {
-    //   oneOf((??????), [28, 29, 30, 31])
-    // })
-})
+//     it('Has a certain range of days', () => {
+//       oneOf((??????), [28, 29, 30, 31])
+//     })
+//     it('a year should have 12 months', () => {
+//       oneOf((??????), [28, 29, 30, 31])
+//     })
+// })
  
 // 6 2016
 // Starts on wednesday
