@@ -30,7 +30,7 @@ describe('cli', () => {
     const expected = NaN
     // deepEqual(parseArgs(args), expected)
   })
-  it('should return an object', () => {
+  it.skip('should return an object', () => {
     isObject(outputVariable)
   })
   it('should return and object', () => {

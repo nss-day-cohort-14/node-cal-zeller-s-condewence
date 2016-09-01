@@ -1,6 +1,6 @@
 'use strict'
 
-const { isFunction, oneOf, deepEqual, typeOf } = require('chai').assert;
+const { isFunction, oneOf, deepEqual, isNumber } = require('chai').assert;
 
 //const { getMonth, getYear } = require('../lib/month')
 const { getDayOfWeek, getMonth, getYear } = require('../lib/zeller')
@@ -11,8 +11,8 @@ const { getDayOfWeek, getMonth, getYear } = require('../lib/zeller')
       isFunction(getMonth)
     })
     it('should return an integer', () => {
-      const month = getMonth(2)
-      typeOf(month, 'integer')
+      const month = getMonth(5)
+      isNumber(month, 'damn straight thats a number')
     })
     //   it.skip('Each indexed month has a corresponding name', () => {
     //   oneOf((getMonth), ["March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "Janruary", "February"])
@@ -32,81 +32,81 @@ const { getDayOfWeek, getMonth, getYear } = require('../lib/zeller')
 // Starts on wednesday
 // 31 days
 // 5 weeks
-    it('', () => {
+    // it('', () => {
       
-    })
+    // })
 
 
 // 9 2016
 // Starts on thursday
 // 30 days
 // 5 weeks
-    it('', () => {
+    // it('', () => {
       
-    })
+    // })
 
 
 // 2 2016
 // starts on monday
 // 29 days
 // 5 weeks
-    it('', () => {
+    // it('', () => {
       
-    })
+    // })
 
 
 // 2 2014
 // starts on saturday
 // 28 days
 // 5 weeks
-    it('', () => {
+    // it('', () => {
       
-    })
+    // })
 
 
 // 2 2015
 // starts on sunday
 // 28 days
 // 4 weeks
-    it('', () => {
+    // it('', () => {
       
-    })
+    // })
 
 
 // 1 2016
 // starts on friday
 // 31 days
 // 6 weeks
-    it('', () => {
+    // it('', () => {
       
-    })
+    // })
 
 
 // 11 2014
 // starts on saturday
 // 30 days
 // 6 weeks
-    it('', () => {
+    // it('', () => {
       
-    })
+    // })
 
 
 // 2 1900
 // starts on thursday
 // 28 days (non-leap century)
 // 5 weeks
-    it('', () => {
+    // it('', () => {
       
-    })
+    // })
 
 
 // 2 2000
 // starts on tuesday
 // 29 days (leap century)
 // 5 weeks
-    it('', () => {
+    // it('', () => {
       
-    })
+    // })
 // node-cal 1752 // cal: year 1752 not in range 1753..9999
 // node-cal 10000 // cal: year 10000 not in range 1753..9999
 // node-cal 13 2015 // cal: month 13 not in range 1..12

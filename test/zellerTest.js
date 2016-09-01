@@ -10,12 +10,12 @@ describe('zeller', () => {
 			isFunction(getDayOfWeek)
 		})
 		it('should return an integer 0-6 representing the day', () => {
-			oneOf(getDayOfWeek(31, 8, 20, 16), [0, 1, 2, 3, 4, 5, 6])
+			oneOf(getDayOfWeek(31, 8, 2016), [0, 1, 2, 3, 4, 5, 6])
 		})
 		it('should take 3 args', () => {
-			const args = [30, 8, 2016]
 			const expected = 3
-			deepEqual(getDayOfWeek(args), expected)
+			const getDay = getDayOfWeek(30, 8, 2016)
+			deepEqual(getDay, expected)
 		})
 	})
 })
