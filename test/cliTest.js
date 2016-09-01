@@ -1,7 +1,7 @@
 'use strict'
 
 const { exec } = require('child_process')
-const { isFunction, strictEqual, deepEqualAasdfGsdfAAA } = require('chai').assert
+const { isFunction, strictEqual, deepEqual, isObject } = require('chai').assert
 
 
 const { getDayOfWeek } = require('../lib/cli')
@@ -30,12 +30,12 @@ describe('cli', () => {
     const expected = NaN
     // deepEqual(parseArgs(args), expected)
   })
-  it('should return and object', () => {
+  it('should return an object', () => {
     isObject(outputVariable)
   })
   it('should return and object', () => {
-    const argsArray = args
-    isArray(argsArray)
+    // const argsArray = args
+    // isArray(argsArray)
   })
 })
 

@@ -1,6 +1,6 @@
 'use strict'
 
-const { isFunction, oneOf } = require('chai').assert;
+const { isFunction, oneOf, deepEqual } = require('chai').assert;
 
 const { getDayOfWeek } = require('../lib/zeller')
 
@@ -12,18 +12,12 @@ describe('zeller', () => {
 		it('should return an integer 0-6 representing the day', () => {
 			oneOf(getDayOfWeek(31, 8, 20, 16), [0, 1, 2, 3, 4, 5, 6])
 		})
+		it('should take 3 args', () => {
+			const args = [30, 8, 2016]
+			const expected = 3
+			deepEqual(getDayOfWeek(args), expected)
+		})
 	})
 })
 
 
-
-// describe('cli', () => {
-// 	describe('getCurrentMonth', () => {
-// 		it('should be a function', () => {
-// 			isFunction(getCurrentMonth)
-// 		})
-// 		it('should return an integer representing the month', () => {
-// 			oneOf(getCurrentMonth(), [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
-// 		})
-// 	})
-// })
