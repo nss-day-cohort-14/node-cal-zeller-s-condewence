@@ -1,29 +1,33 @@
 'use strict'
 
-const { isFunction, oneOf, deepEqual } = require('chai').assert;
+const { isFunction, oneOf, deepEqual, typeOf } = require('chai').assert;
 
-const { ??????? } = require('../lib/month')
-const { getDayOfWeek } = require('../lib/zeller')
+//const { getMonth, getYear } = require('../lib/month')
+const { getDayOfWeek, getMonth, getYear } = require('../lib/zeller')
 
-describe('month', () => {
-  describe('???????', () => {
+
+  describe('getMonth', () => {
     it('should be a function', () => {
-      isFunction((???????)
+      isFunction(getMonth)
     })
-      it('Each indexed month has a corresponding name', () => {
-      oneOf((??????), ["March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "Janruary", "February"])
+    it('should return an integer', () => {
+      const month = getMonth(2)
+      typeOf(month, 'integer')
     })
-    it('Month starts on a day', () => {
-      oneOf((??????), ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"])
-    })
-    it('Has a certain range of weeks', () => {
-      oneOf((??????), [4, 5, 6])
-    })
+    //   it.skip('Each indexed month has a corresponding name', () => {
+    //   oneOf((getMonth), ["March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "Janruary", "February"])
+    // })
+    // it('Month starts on a day', () => {
+    //   oneOf((??????), ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"])
+    // })
+    // it('Has a certain range of weeks', () => {
+    //   oneOf((??????), [4, 5, 6])
+    // })
 
-    it('Has a certain range of days', () => {
-      oneOf((??????), [28, 29, 30, 31])
-    })
-
+    // it('Has a certain range of days', () => {
+    //   oneOf((??????), [28, 29, 30, 31])
+    // })
+})
 // 6 2016
 // Starts on wednesday
 // 31 days
@@ -107,4 +111,3 @@ describe('month', () => {
 // node-cal 10000 // cal: year 10000 not in range 1753..9999
 // node-cal 13 2015 // cal: month 13 not in range 1..12
 
-})
