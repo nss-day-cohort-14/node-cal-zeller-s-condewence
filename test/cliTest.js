@@ -16,13 +16,14 @@ describe('cli', () => {
   it('should handle one argument ("cal arg" = requested year)', () => {
     const args = [2011]
     const parseArgsFunc = parseArgs(args)
-    const expected = {month: undefined, year: 2011}
+    const expected = { month: undefined, year: 2011 }
     deepEqual(parseArgsFunc, expected)
   })
 
-  it.skip('should handle two arguments ("cal arg arg" = requested month / requested year)', () => {
+  it('should handle two arguments ("cal arg arg" = requested month / requested year)', () => {
     const args = [2, 2011]
-    const expected = 
+    const parseArgsFunc = parseArgs(args)
+    const expected = { month: 2, year: 2011 }
     deepEqual(parseArgs(args), expected)
   })
   it('should only accept integers as arguments', () => {
