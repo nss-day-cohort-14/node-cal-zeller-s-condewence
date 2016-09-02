@@ -24,7 +24,7 @@ describe('parseArgs', () => {
       isObject(argsEntered)
   })
   it.skip('should return an object with 2 key value pairs', () => {
-  		const args = ''
+  		const args = [2016]
   		const obj = parseArgs(args)
     	const objArray = Object.keys('obj')
     	const arrayLength = objArray.length
