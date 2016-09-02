@@ -16,7 +16,7 @@ describe('cli', () => {
   it('should handle one argument ("cal arg" = requested year)', () => {
     const args = [2011]
     const parseArgsFunc = parseArgs(args)
-    const expected = { month: undefined, year: 2011 }
+    const expected = { month: '', year: 2011 }
     deepEqual(parseArgsFunc, expected)
   })
 
