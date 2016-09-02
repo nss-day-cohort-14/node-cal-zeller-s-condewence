@@ -3,6 +3,7 @@
 const { isFunction, oneOf, deepEqual, isNumber ,isUndefined, isAbove, isBelow} = require('chai').assert;
 
 const { getDayOfWeek, getMonth, getYear } = require('../lib/zeller')
+const { getMonthName } = require('../lib/month')
 
   describe('getMonth', () => {
     it('should be a function', () => {
@@ -27,11 +28,18 @@ const { getDayOfWeek, getMonth, getYear } = require('../lib/zeller')
       const expected = month + 12
       const modifiedMonth = getMonth(month)
       deepEqual(modifiedMonth, expected)
-    })    
+    })
+})
 
-//       it.skip('Each indexed month has a corresponding name', () => {
-//       oneOf((getMonth), ["March", "April", "May", "June", "July", "August", "September", "October", "November", "December", "Janruary", "February"])
-//     })
+describe('getMonthName', () => {
+  it('Each indexed month has a corresponding name', () => {
+    const monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    let i = 0
+    for (i; i < monthArray.length; i++){
+      let month = getMonthName(i)
+      deepEqual(month, monthArray[i])
+    }
+  })
 
 //     it('Month starts on a day', () => {
 //       oneOf((??????), ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"])
@@ -47,7 +55,7 @@ const { getDayOfWeek, getMonth, getYear } = require('../lib/zeller')
 // //       oneOf((??????), [28, 29, 30, 31])
 // //     })
 // // })
- 
+})
 
 
 
@@ -249,24 +257,24 @@ const { getDayOfWeek, getMonth, getYear } = require('../lib/zeller')
 //       const
 //       deepEqual(,)
 //     })
+    // it('should return an integer', () => {
+    //   const month = getMonth(5)
+    //   isNumber(month, 'damn straight thats a number')
+    // })
 
 
-
+describe('getYear', () => {
 // node-cal 1752 // cal: year 1752 not in range 1753..9999
     it.skip('should be above 1752 (only return for a specified range of years)', () => {
       const arg = getYear(1753)
       isAbove(arg, 1752)
     })
-    it('should be below 10000 years (only return for a specified range of years)', () => {
+    it.skip('should be below 10000 years (only return for a specified range of years)', () => {
       const arg = getYear(5, 2015)
       isBelow(arg, 10000)
     })
-    it('should return an integer', () => {
-      const month = getMonth(5)
-      isNumber(month, 'damn straight thats a number')
-    })
+})
 
 // node-cal 10000 // cal: year 10000 not in range 1753..9999
 // node-cal 13 2015 // cal: month 13 not in range 1..12
 
-})
